@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   strchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 13:31:28 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 14:48:04 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/09/17 11:21:52 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/09/17 11:46:11 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memset(void *b, int c, size_t len)
+char *ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	int i = 0;
 
-	i = 0;
-	while (i < len)
+	while (s[i] != 0)
 	{
-		((unsigned char *)b)[i] = (unsigned char)c;
+		if(s[i] == (char)c)
+			return (&s[i]);
 		i++;
 	}
-	return (b);
+	if(s[i] == (char)c)
+			return (&s[i]);
+	else return 0;
 }
-/*
+
 int main()
 {
-	char 
-}*/
+	char cadena[20]= "hamaica mola";
+	char *s = ft_strchr(cadena, 98);
+	printf("%s", s);
+s = strchr(cadena, 98);
+	printf("%s", s);
+}

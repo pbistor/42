@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   toupper.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 13:31:28 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 14:48:04 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/09/17 11:08:38 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/09/17 11:15:24 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memset(void *b, int c, size_t len)
+int toupper(int c)
 {
-	size_t	i;
 
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char *)b)[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	
+		if (c >= 97 && c < 123)
+			c = c - 32;
+
+	return (c);
 }
-/*
-int main()
+
+int main(void)
 {
-	char 
-}*/
+	char  c;
+	int i;
+	i = 99;
+	c = (char)i;
+	printf("%c", c);
+
+ 	c=toupper(c);
+	printf("%c", c);
+
+}

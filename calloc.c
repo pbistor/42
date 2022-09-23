@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   calloc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 13:31:28 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 14:48:04 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/09/17 15:41:12 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/09/17 15:50:43 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memset(void *b, int c, size_t len)
+#include <stddef.h>
+void *calloc(size_t count, size_t size)
 {
-	size_t	i;
+	void *p;
 
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char *)b)[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	p = malloc (count * size);
+	if (!p)
+		return NULL;
+	 ft_bzero(p, size);
+	return p;
 }
-/*
-int main()
-{
-	char 
-}*/

@@ -6,22 +6,23 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:34:54 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/12 16:38:30 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/09/23 13:21:08 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {	
-		if (c >= 0 && c<= 177)
-			return (1);
-		
+	if (c >= 0 && c <= 127)
+		return (1);
 	return (0);
 }
-
+/*
 int main ()
 {
-    printf("%d", ft_isascii(233));
-    printf("%d", isascii(233));
+    printf("%d", ft_isascii(129));
+    printf("%d", isascii(129));
 
     
-}
+}*/

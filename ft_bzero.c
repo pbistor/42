@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 13:31:28 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 14:48:04 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/09/23 15:25:42 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/09/23 15:31:40 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		((unsigned char *)b)[i] = (unsigned char)c;
+		((char *)s)[i] = 0;
 		i++;
 	}
-	return (b);
 }
 /*
 int main()
 {
-	char 
+	int i = 0;
+	void *a;
+	//a = (void *)malloc (sizeof(49)*4); 
+	ft_bzero(a, 20);
+	while (i < 23)
+	{
+		//write(1, &a[i], 1);
+		i++;
+	}
 }*/

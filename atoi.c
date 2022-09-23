@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   atoi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 16:40:00 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 13:26:26 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/09/17 15:32:09 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/09/17 15:39:27 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *s)
+int	ft_atoi(const char *str)
 {
 	int	i;
+	int	j;
+	int	neg;
 
 	i = 0;
-	while (s[i] != 0)
+	j = 0;
+	neg = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
+		if (str[i] == '-')
+		neg *= -1;
 		i++;
 	}
-	return (i);
+	while (str[i] >= '0' && str[i] <= '9' && str[i]!=0)
+	{
+		j *= 10;
+		j += str[i] - '0';
+		i++;
+	}
+	return (j * neg);
 }
-/*
+
+#include <stdio.h>
+#include <stdlib.h>
 int main()
 {
-	printf("%d" ,ft_strlen("golaa"));			
-	printf("%d" , strlen("golaa"));			
-
-
-}*/
+    char str[14]="  2  ";
+    printf("%d\n", ft_atoi(str));
+    printf("%d", atoi(str));
+}
