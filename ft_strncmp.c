@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 11:39:46 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/17 11:41:21 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:33:40 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -23,15 +23,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		if (s1[i] != s2[i])
 		{
-			truer = s1[i] - s2[i];
+			truer = (unsigned char)s1[i] - (unsigned char)s2[i];
 			return (truer);
 		}
 		i++;
 	}
 	return (0);
 }
-
-
+/*
 int main(void)
 {
 	char src[21]="holjhuytiyuyfiytaayfiy";
@@ -40,4 +39,4 @@ int main(void)
 	unsigned int n;
 	printf("%d", ft_strncmp(src, dest, 6));
 	printf("%d", strncmp(src, dest, 6));
-}
+}*/

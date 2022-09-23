@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:32:09 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/17 15:39:27 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:52:10 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -35,7 +37,7 @@ int	ft_atoi(const char *str)
 	}
 	return (j * neg);
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 int main()
@@ -43,4 +45,4 @@ int main()
     char str[14]="  2  ";
     printf("%d\n", ft_atoi(str));
     printf("%d", atoi(str));
-}
+}*/

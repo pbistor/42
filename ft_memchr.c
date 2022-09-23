@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   toupper.c                                          :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 11:08:38 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/17 11:15:24 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/09/17 11:51:29 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/09/23 17:35:53 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int toupper(int c)
+#include "libft.h"
+
+void *ft_memchr(const void *s, int c, size_t n)
 {
-
-	
-		if (c >= 97 && c < 123)
-			c = c - 32;
-
-	return (c);
+	size_t i = 0;
+    const char *str;
+    str = (const char *)s;
+	while (i < n)
+	{
+		if(str[i] == (char)c)
+			return ((void *)s+i);
+		i++;
+	}
+	 return 0;
 }
-
-int main(void)
+/*
+int main()
 {
-	char  c;
-	int i;
-	i = 99;
-	c = (char)i;
-	printf("%c", c);
-
- 	c=toupper(c);
-	printf("%c", c);
-
-}
+	char cadena[20]= "hamaica mola";
+	char *s = ft_memchr(cadena, 97, 10);
+	printf("%s", s);
+s = memchr(cadena, 97, 10);
+	printf("%s", s);
+}*/
