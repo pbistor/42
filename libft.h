@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 12:32:41 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 17:58:06 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/09/30 19:41:07 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,15 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 int	ft_atoi(const char *str);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strtrim(char const *s1, char const *set);
+char *ft_itoa(int n);
+int	ft_isprint(int c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+
+
+
+
 
 
 #endif

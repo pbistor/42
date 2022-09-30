@@ -6,48 +6,56 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:42:49 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 12:06:17 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/09/30 13:36:57 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strtrim(char const *s1, char const *set)
+#include "libft.h"
+
+int ft_isinset(char c, const char *set)
 {
-	char *p;
-	int i = 0;
-	int j = 0;
-	int end;
-	int strt =  -1;
-	int len = strlen(s1);
-	while (s1[i] != 0 && strt == -1)
+	int i;
+
+	i = 0;
+	while(set[i]!=0)
 	{
-		j = 0;
-		while(set[j]!= 0)
-		{
-			if(set[j] != s1[i] && set[j] != 0)	
-			j++;
-			else if (set[j] == 0)
-			{
-				strt = i;
-				break;
-			}
-		}
+		if (set[i] == c)
+			return 1;
 		i++;
 	}
-	i = 0;
-	while (i > 0 && end = -1)
+	return 0;
+}
+char *ft_strtrim(char const *s1, char const *set)
+{
+
+	int i = 0;
+	int end = 0;
+	
+	int len = ft_strlen(s1);
+	int strt =  len;
+	if(!s1 || !set)
+		return NULL;
+	while (s1[i] != 0)
 	{
-		j = 0;
-		while(set[j]!= 0)
-		{
-			if(set[j] != s1[i] && set[j] != 0)	
-			j++;
-			else if (set[j] == 0)
-			{
-				end = i;
-				break;
-			}
-		}
+		if (!ft_isinset(s1[i], set))
+			{strt = i;
+			break;}
+ 		i++;
+	}
+	i = len - 1;
+	while (i > 0)
+	{
+		if (!ft_isinset(s1[i], set))
+			{end = i;
+			break;}
 		i--;
 	}
-	ft_substr();
+	//printf("start: %d, %d", strt,end);
+	return ( ft_substr(s1, strt, end - strt + 1));
 }
+/*
+int main()
+{
+	const char s1[] = "lorem ipsum dolor sit ameeeeeeet";
+	printf("%s", ft_strtrim( "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ", " \n\t"));
+}*/
