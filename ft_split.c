@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:17:47 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 18:01:01 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 22:30:18 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ char	**ft_split(char const *s, char c)
 	char	**p;
 
 	j = 0;
+	if (!s)
+		return (0);
 	wds = calcwords(s, c);
 	p = (char **)malloc(sizeof(char *) * (wds + 1));
 	if (!p)

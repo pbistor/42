@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 09:52:03 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 22:32:50 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/10/07 21:19:38 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/10/07 22:24:37 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
+	t_list	*newlst;
+	t_list	*node;
 
-	if (!s1 || !s2)
-		return (0);
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
-	str = malloc ((j + i + 1) * sizeof(char));
-	if (!str)
-		return (0);
-	i = 0;
-	j = 0;
-	while (s1[i] != 0)
+	if (!lst)
+		return (NULL);
+	newlst = 0;
+	while (lst)
 	{
-		str[i] = s1[i];
-		i++;
+		node = ft_lstnew(f(lst->content));
+		if (!node)
+		{
+			ft_lstclear(&newlst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&newlst, node);
+		lst = lst->next;
 	}
-	while (s2[j] != 0)
-	{
-		str[i++] = s2[j++];
-	}
-		str[i] = '\0';
-	return (str);
+	return (newlst);
 }

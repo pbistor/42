@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:42:49 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 11:59:32 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 22:33:36 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int	len;
 	int	strt;
 
+	if (!s1)
+		return (0);
 	i = 0;
 	end = 0;
 	len = ft_strlen(s1);

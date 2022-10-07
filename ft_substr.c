@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:00:33 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 10:35:28 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 22:34:00 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*str;
 
+	if (!s)
+		return (0);
 	i = 0;
 	if (start >= ft_strlen(s))
 	{
