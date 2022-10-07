@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:00:33 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 19:41:56 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:35:28 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-/*
-#include <string.h>
-int main()
-{
-	char *str = "i just want this part #############";
- 	size_t size = 20;
- 	char *ret = ft_substr(str, 5, size);
-	if (!strncmp(ret, str + 5, size))
- 	{
-		printf ("succes\n");
-	}
-	//char *ret2 = substr(str, 5, size);
-	printf("%s", ret);
-	//printf("%s", ret2);
-
-}
-*/

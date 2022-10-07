@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 12:47:47 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 13:15:16 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:33:54 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,3 @@ int	ft_isdigit(int c)
 		return (0);
 	return (1);
 }
-/*
-int main ()
-{
-    printf("%d", ft_isdigit(53));
-    printf("%d", isdigit(53));
-
-    
-}*/

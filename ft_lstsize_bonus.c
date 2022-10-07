@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 15:32:09 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 10:27:58 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/10/07 12:43:46 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/10/07 12:50:50 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
-	int	j;
-	int	neg;
 
-	i = 0;
-	j = 0;
-	neg = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (!lst)
+		return (0);
+	i = 1;
+	while (lst->next != NULL)
 	{
-		if (str[i] == '-')
-		neg *= -1;
+		lst = lst->next;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != 0)
-	{
-		j *= 10;
-		j += str[i] - '0';
-		i++;
-	}
-	return (j * neg);
+	return (i);
 }

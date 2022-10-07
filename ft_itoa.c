@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:16:36 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/30 19:18:37 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:30:02 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,33 +28,21 @@ int	ft_calclen(int n)
 	}
 	return (i);
 }
-/*
-int ft_flip(int n)
-{
-	if(n == -2147483648)
-	{
-		n = 2147483647;
-	}
-	if (n<0)
-	{
-		n *= -1;
-	}
-}*/
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int	i;
-	char *str;
-	int len;
-	long num;
+	int		i;
+	char	*str;
+	int		len;
+	long	num;
 
 	num = n;
 	len = ft_calclen(n);
 	i = 0;
-	if(num < 0)
+	if (num < 0)
 		num *= -1;
 	str = ft_calloc(len + 1, sizeof(char));
-	if(!str)
+	if (!str)
 		return (0);
 	if (n < 0)
 		str[0] = '-';
@@ -62,17 +50,7 @@ char *ft_itoa(int n)
 	while (len >= 0 && str[len] != '-')
 	{
 		str[len--] += (num % 10) + '0' ;
-		num = num/10;
+		num = num / 10;
 	}
-	return str;
+	return (str);
 }
-/*
-int main()
-{
-	printf("%s" , ft_itoa(-2147483648));
-	char *s = ft_itoa(-2147483648);
-	//write(1, &s[0] , 10);
-
-}*/
-
-

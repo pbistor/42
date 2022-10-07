@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:41:12 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/30 18:44:26 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:28:26 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
 
-	if(count != 0 && size > SIZE_MAX / count)
-		return 0;
+	if (count != 0 && size > SIZE_MAX / count)
+		return (0);
 	p = (void *)malloc (count * size);
 	if (!p)
 		return (NULL);

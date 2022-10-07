@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:05:30 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 16:26:18 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:39:12 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (j);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main(void)
-{
-	char src[60]="rffei";
-	char dest[10];
-	//printf("%lu", ft_strlcpy(dest , src, 0));
-	//printf("%lu", strlcpy(dest , src, 0));
-	strlcpy(dest , src, 3);
-	//write(1, dest, 10);
-	printf("%s", dest);
-	//write(1, ft_strlcpy( dest,  src, 8), 8);
-	
-}*/

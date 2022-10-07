@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 15:32:09 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 10:27:58 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/10/07 12:30:56 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/10/07 12:42:54 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	i;
-	int	j;
-	int	neg;
-
-	i = 0;
-	j = 0;
-	neg = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-		neg *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != 0)
-	{
-		j *= 10;
-		j += str[i] - '0';
-		i++;
-	}
-	return (j * neg);
+	if (!new || !lst)
+		return (NULL);
+	new->next = *lst;
+	*lst = new;
+	return (*lst);
 }

@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:40:00 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 13:26:26 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:39:04 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-/*
-int main()
-{
-	printf("%d" ,ft_strlen("golaa"));			
-	printf("%d" , strlen("golaa"));			
-
-
-}*/

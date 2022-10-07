@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 15:32:09 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 10:27:58 by vprieto-         ###   ########.fr       */
+/*   Created: 2022/10/07 12:57:50 by vprieto-          #+#    #+#             */
+/*   Updated: 2022/10/07 13:40:52 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
-	int	j;
-	int	neg;
+	t_list	*index;
 
-	i = 0;
-	j = 0;
-	neg = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (lst == NULL)
+		*lst = new;
+	else
 	{
-		if (str[i] == '-')
-		neg *= -1;
-		i++;
+		index = ft_lstlast(*lst);
+		index->next = new;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != 0)
-	{
-		j *= 10;
-		j += str[i] - '0';
-		i++;
-	}
-	return (j * neg);
 }

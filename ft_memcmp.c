@@ -6,13 +6,13 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:19:16 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 17:43:37 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:34:34 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2,  size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t		i;
 	int			truer;
@@ -22,7 +22,6 @@ int	ft_memcmp(const void *s1, const void *s2,  size_t n)
 	str1 = (const char *)s1;
 	str2 = (const char *)s2;
 	i = 0;
-
 	while (i < n)
 	{
 		if (str1[i] != str2[i])
@@ -34,13 +33,3 @@ int	ft_memcmp(const void *s1, const void *s2,  size_t n)
 	}
 	return (0);
 }
-/*
-int main(void)
-{
-	char src[21]="holjhuytiyuyfiytaayfiy";
-	char dest[20]="holaea";
-	char array[5];
-	unsigned int n;
-	printf("%d", ft_memcmp(src, dest, 6));
-	printf("%d", memcmp(src, dest, 6));
-}*/
