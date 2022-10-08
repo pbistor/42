@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:34:54 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 13:21:08 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:38:20 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-/*
-int main ()
-{
-    printf("%d", ft_isascii(129));
-    printf("%d", isascii(129));
-
-    
-}*/

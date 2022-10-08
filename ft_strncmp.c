@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 11:39:46 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 10:38:55 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:40:54 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int main(void)
-{
-	char src[21]="holjhuytiyuyfiytaayfiy";
-	char dest[20]="holzea";
-	char array[5];
-	unsigned int n;
-	printf("%d", ft_strncmp(src, dest, 6));
-	printf("%d", strncmp(src, dest, 6));
-}*/

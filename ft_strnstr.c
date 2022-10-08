@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:32:55 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/10/07 10:38:38 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:31:37 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,41 +15,23 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	int		j;
-	int		k;
-	char	*to_find;
-	char	*str;
+	size_t	j;
 
-	to_find = (char *) needle;
-	str = (char *) haystack;
+	if (*needle == '\0')
+		return ((char *)haystack);
 	i = 0;
-	j = 0;
-	k = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != 0 && i < len)
+	while (len > 0 && haystack[i] != '\0')
 	{
-        k = i;
 		j = 0;
-		while (str[i] == to_find[j])
+		while (haystack[j + i] == needle [j] && len > (j + i))
 		{
-			if (to_find[j+1] == 0)
-				return (&str[k]);
-			i++;
+			if (!needle[j] && !haystack[j + i])
+				return ((char *)haystack + i);
 			j++;
 		}
+		if (needle[j] == '\0')
+			return ((char *)haystack + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
-/*
-int main(void)
-{
-	char src[21]="cahoolcaljholhuytiyy";
-	char dest[20]="holh";
-	char array[5];
-	unsigned int n;
-	printf("%s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-	printf("%s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-}
-*/

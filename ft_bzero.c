@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:25:42 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 15:31:40 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:38:10 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*
-int main()
-{
-	int i = 0;
-	void *a;
-	//a = (void *)malloc (sizeof(49)*4); 
-	ft_bzero(a, 20);
-	while (i < 23)
-	{
-		//write(1, &a[i], 1);
-		i++;
-	}
-}*/

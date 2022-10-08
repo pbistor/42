@@ -18,9 +18,9 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 re: fclean all
-# $(DIR): $(OBJS) $(OBJS_BONUS)
-# 	${AR} $(NAME) $(OBJS_BONUS)
-# bonus: $(DIR)
+$(DIR): $(OBJS) $(OBJS_BONUS)
+	${AR} $(NAME) $(OBJS_BONUS) $(OBJS)
+bonus: $(DIR)
 
 
 .PHONY: all clean fclean re bonus

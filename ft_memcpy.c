@@ -6,7 +6,7 @@
 /*   By: vprieto- <vprieto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:34:18 by vprieto-          #+#    #+#             */
-/*   Updated: 2022/09/23 15:53:45 by vprieto-         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:39:15 by vprieto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-#include <string.h>
-int main()
-{
-    char p[4] = "sos";
-    *p = 1;
-    char s[100] = "a veces me pregunto sobre el futuro venidero";
-
-    void *u;
-    u = ft_memcpy(((void *)0), ((void *)0), 3);
-
-    printf("%s",u);
-
-
-
-}*/
